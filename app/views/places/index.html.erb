@@ -5,7 +5,7 @@
     <h1><%= link_to place.name, place_path(place) %></h1>
     <div class="pull-right">
     <% if place.photos.present? && place.photos.last.picture.present?  %>
-      <%= image_tag place.photos.order("id ASC").last.picture.url, :class => "col-xs-10 col-sm-10 col-md-10" %> 
+      <%= image_tag place.photos.order("id ASC").last.picture.url, :class => "img-thumbnail" %> 
     <% end %>
   </div>
     <i><%= place.address %></i><br /><br />
