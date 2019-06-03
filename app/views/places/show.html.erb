@@ -40,7 +40,7 @@
 <% end %>
 <br>
   <div class="pull-right">
-    <!-- Button trigger photo modal -->
+    <!-- Photo -->
     <button class="btn btn-primary" data-toggle="modal" data-target="#myCommentModal">
       Add a comment
     </button>
@@ -53,7 +53,7 @@
     <% end %>
   </div>
 
-  <!-- Modal to add photo-->
+  <!-- Modal-->
   <div class="modal fade" id="myPhotoModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -76,18 +76,13 @@
   <div class="clear row">
     <h3 class="pull-left">Photos</h3>
   </div>
-  <% @place.photos.each do |photo| %>
-      <%= image_tag photo.picture.url %>
-      <%= photo.caption %></span>
-  <% end %>
+
   <br>
-  <!-- Code for adding and viewing comments -->
+  <!--comments -->
 <div class="col-xs-10 col-xs-offset-1">
   <h1 class="pull-left">Comments</h1>
 </div>
-
-  <!-- Button to trigger comment modal -->
-<div class ="clear"></div>
+<br>
 
 <!-- Modal -->
 <div class="modal fade" id="myCommentModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -110,7 +105,12 @@
     </div>
   </div>
 </div>
-
+<% @place.photos.each do |photo| %>
+    <div class="col-xs-12 col-sm-6">
+      <%= image_tag photo.picture.url, class: 'img-fluid' %>
+      <%= photo.caption %></span>
+    </div>
+  <% end %>
 <% @place.comments.each do |comment| %>
   <div class="col-xs-12 col-sm-6">
     <blockquote>
