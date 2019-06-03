@@ -50,16 +50,6 @@
     <% end %>
   </div>
 
-  <div class="clear row">
-    <h3 class="pull-left">Photos</h3>
-  </div>
-  <div>
-      <% @place.photos.each do |photo| %>
-        <%= image_tag photo.picture.url %>
-        <%= photo.caption %></span>
-      <% end %>
-    </div>
-
   <!-- Modal to add photo-->
   <div class="modal fade" id="myPhotoModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -78,15 +68,15 @@
         <%= f.submit "Add a Photo", class: 'btn btn-primary' %>
         <% end %>
         </div>
-      <div>
-      <% @place.photos.each do |photo| %>
-        <%= image_tag photo.picture.url %>
-        <%= photo.caption %>
-      <% end %>
-    </div>
-
       </div>
     </div>
+  </div>
+  <div class="clear row">
+    <h3 class="pull-left">Photos</h3>
+    <% @place.photos.each do |photo| %>
+        <%= image_tag photo.picture.url %>
+        <%= photo.caption %></span>
+      <% end %>
   </div>
   <br>
   <!-- Code for adding and viewing comments -->
