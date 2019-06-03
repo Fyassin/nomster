@@ -80,8 +80,10 @@
   <div class="row">
   <% @place.photos.each do |photo| %>
     <div class="col-md-6 col-lg-4 m-photo-container">
+      <% if @place.photos.present? %>
       <%= image_tag photo.picture.url %>
       <%= photo.caption %>
+      <% end %>
     </div>
   <% end %>
 </div>
