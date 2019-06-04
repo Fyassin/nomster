@@ -77,22 +77,18 @@
   </div>
   <div class="clear row">
     <h3 class="pull-left">Photos</h3>
+  </div>
     <%if @place.photos.present? %>
     <h1 class="photo-heading">Photos of <%= @place.name %></h1>
     <div class="row">
         <% @place.photos.each do |photo| %>
           <div class="col-md-6 col-lg-4 photo-container">
-            <%= image_tag photo.picture, :class => 'photo-picture' %>
-            <div class="clear"></div>
-            <p class="photo-caption">
-              <%= photo.caption %>
-            </p>
+            <%= image_tag photo.picture.url %>
+            <%= photo.caption %>
           </div>  
         <% end %>
     </div>
   <% end %>
-  </div>
-
 <br>
   <!--comments -->
 <div class="col-xs-10 col-xs-offset-1">
