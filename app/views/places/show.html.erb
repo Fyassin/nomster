@@ -39,6 +39,7 @@
   </script>
 
 <% end %>
+
 <br>
   <div class="pull-right">
     <!-- Photo -->
@@ -76,7 +77,22 @@
   </div>
   <div class="clear row">
     <h3 class="pull-left">Photos</h3>
+    <%if @place.photos.present? %>
+    <h1 class="photo-heading">Photos of <%= @place.name %></h1>
+    <div class="row">
+        <% @place.photos.each do |photo| %>
+          <div class="col-md-6 col-lg-4 photo-container">
+            <%= image_tag photo.picture, :class => 'photo-picture' %>
+            <div class="clear"></div>
+            <p class="photo-caption">
+              <%= photo.caption %>
+            </p>
+          </div>  
+        <% end %>
+    </div>
+  <% end %>
   </div>
+
 <br>
   <!--comments -->
 <div class="col-xs-10 col-xs-offset-1">
@@ -116,18 +132,5 @@
     </blockquote>
   </div>
 <% end %>
-<div class="container-fluid">
- <div class="m-place-box col-xs-10 col-xs-offset-1">
-      <% if @place.photos.present? %>
-        <h2 class="m-photo-heading">Photos of <%= @place.name %></h2>
-          <% @place.photos.each do |photo| %>
-            <div class="col-md-6 col-lg-4 m-photo-container">
-            <%= image_tag photo.picture.url %>
-            <%= photo.caption %>
-            </div>
-          <% end %>
-      <% end %>
-    </div>
-</div>
 </div>
 
