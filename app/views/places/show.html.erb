@@ -53,24 +53,6 @@
     <%= link_to 'Destroy', place_path(@place), :method => :delete, :data => {:confirm => 'Are you sure you want to delete this location?'},:class => 'btn btn-primary' %>
     <% end %>
   </div>
-
-<div class="container-fluid">
-  <div class="row">
-    <div class="m-place-box col-xs-10 col-xs-offset-1">
-      <% if @place.photos.present? %>
-        <h2 class="m-photo-heading">Photos of <%= @place.name %></h2>
-        <div class="row">
-          <% @place.photos.each do |photo| %>
-            <div class="col-md-6 col-lg-4 m-photo-container">
-            <%= image_tag photo.picture.url %>
-              <%= photo.caption %>
-            </div>
-          <% end %>
-        </div>
-      <% end %>
-    </div>
-  </div>
-</div>
   
   <!-- Modal-->
   <div class="modal fade" id="myPhotoModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -134,4 +116,18 @@
     </blockquote>
   </div>
 <% end %>
+<div class="container-fluid">
+ <div class="m-place-box col-xs-10 col-xs-offset-1">
+      <% if @place.photos.present? %>
+        <h2 class="m-photo-heading">Photos of <%= @place.name %></h2>
+          <% @place.photos.each do |photo| %>
+            <div class="col-md-6 col-lg-4 m-photo-container">
+            <%= image_tag photo.picture.url %>
+            <%= photo.caption %>
+            </div>
+          <% end %>
+      <% end %>
+    </div>
 </div>
+</div>
+
