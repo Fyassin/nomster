@@ -21,15 +21,12 @@
   <% if @place.latitude.present? && @place.longitude.present? %>
 
   <script>
-
     function initMap() {
       var myLatLng = {lat: <%= @place.latitude %>, lng: <%= @place.longitude %>};
-
       var map = new google.maps.Map(document.getElementById('map'), {
         zoom: 12,
         center: myLatLng
       });
-
       var marker = new google.maps.Marker({
         position: myLatLng,
         map: map,
@@ -71,8 +68,8 @@
           <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
           <h4 class="modal-title" id="myModalLabel">Add a comment</h4>
         </div>
-        <%= simple_form_for @photo, url: place_photos_path(@place) do |f| %>
         <div class="modal-body">
+        <%= simple_form_for @photo, :url => place_photos_path(@place) do |f| %>
           <%= f.input :picture %>
           <%= f.input :caption %>
         </div>
@@ -104,10 +101,10 @@
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
         <h4 class="modal-title" id="myModalLabel">Add a comment</h4>
       </div>
-      <%= simple_form_for @comment, url: place_comments_path(@place) do |f| %>
       <div class="modal-body">
-          <%= f.input :message %>
-          <%= f.input :rating, :as => :select, :collection => Comment::RATINGS %>
+          <%= simple_form_for @comment, :url => place_comments_path(@place) do |f| %>
+      <%= f.input :message %>
+      <%= f.input :rating, :as => :select, :collection => Comment::RATINGS %>
       </div>
       <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
@@ -130,4 +127,3 @@
   </div>
 <% end %>
 </div>
-
