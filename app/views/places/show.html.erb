@@ -56,7 +56,7 @@
   <div class="clear row">
     <h3 class="pull-left">Photos</h3>
   </div>
-        <% @place.photos.each do |photo| %>
+<% @place.photos.each do |photo| %>
     <div>
         <%= image_tag photo.picture.url %>
         <%= photo.caption %></span>
