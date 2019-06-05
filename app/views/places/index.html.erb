@@ -7,7 +7,7 @@
       <%= image_tag place.photos.order("id ASC").last.picture.url, :class => "img-thumbnail" %> 
     <% end %>
   </div>
-    <h1><%= link_to place.name, place_path(place) %></h1>
+    <h1><%= link_to place.name, place_path(place), class: "a-primary" %></h1>
     <i><%= place.address %></i><br /><br />
     <p><%= place.description %></p><br />
 

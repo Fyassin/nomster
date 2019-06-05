@@ -20,6 +20,7 @@ h1, h2, h3, h4, h5, h6 {
   padding:0;
 }
 
+
 body {
   background: image_url('hypnotize.png');
   font-family: Corbel, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", "Bitstream Vera Sans", "Liberation Sans", Verdana, "Verdana Ref", sans-serif;
@@ -31,7 +32,7 @@ body {
 }
 
 .navbar-inverse .navbar-brand {
-  color: #E3E85A;
+  color: #FF8C69;
   font-family: 'henny_pennyregular', sans-serif;
   
 }
@@ -72,9 +73,10 @@ blockquote p {
   display: inline;
 }
 
+.a-primary, .a-primary:hover {
+  text-decoration: white;
+  color: #FF8C69;
 
-
-
-
+}
 
 
