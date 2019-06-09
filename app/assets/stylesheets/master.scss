@@ -21,6 +21,10 @@
   height: max-content;
 }
 
+.form-control:focus {
+  border-color: #D3D3D3;
+}
+
 h1, h2, h3, h4, h5, h6 {
   margin:0;
   padding:0;
@@ -98,6 +102,15 @@ blockquote p {
 .a-primary2:hover{
   text-decoration: underline;
   color: #FF8C69; 
+}
+
+.a-primary3 {
+  color:black;
+}
+
+.a-primary3:hover {
+  text-decoration: underline;
+  color: black;
 }
 
 .carousel-inner > .carousel-item > img, .carousel-inner > .carousel-item > a > img {
