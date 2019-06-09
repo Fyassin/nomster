@@ -80,10 +80,24 @@ blockquote p {
   display: inline;
 }
 
-.a-primary, .a-primary:hover {
-  text-decoration: white;
+.a-primary {
   color: #FF8C69;
+}
 
+.a-primary:hover{
+  text-decoration: underline;
+  color: black;
+}
+
+.a-primary2, {
+  color: black;
+  font-weight: none;
+
+}
+
+.a-primary2:hover{
+  text-decoration: underline;
+  color: #FF8C69; 
 }
 
 .carousel-inner > .carousel-item > img, .carousel-inner > .carousel-item > a > img {

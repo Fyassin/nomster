@@ -79,7 +79,7 @@
         </div>
         <div class="modal-footer">
             
-        <%= f.submit "Upload", :class => 'btn btn-primary' %>
+        <%= f.submit "Upload", :class => 'btn btn-secondary' %>
       <% end %>
         </div>
       </div>
@@ -101,13 +101,13 @@
         <h4 class="modal-title" id="myModalLabel">Add a Comment</h4>
       </div>
       
-    <%= simple_form_for @comment, :url => place_comments_path(@place) do |f| %>
+    <%= simple_form_for @comment, :url => place_comments_path(@place), class: "a-primary" do |f| %>
       <div class="modal-body">
       <%= f.input :message %>
       <%= f.input :rating, :as => :select, :collection => Comment::RATINGS %>
       </div>
       <div class="modal-footer">
-      <%= f.submit "Post", :class => 'btn btn-primary' %>
+      <%= f.submit "Post", :class => 'btn btn-secondary' %>
     <% end %>
       </div>
     </div>
