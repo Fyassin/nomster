@@ -39,7 +39,7 @@
 
 <% @places.each do |place| %>
 <div class="booyah-box col-10 offset-1">
-  <div class="pull-right">
+  <div class="pull-right" style= "height:200px; width: 200px">
     <% if place.photos.present? && place.photos.last.picture.present?  %>
       <%= image_tag place.photos.order("id ASC").last.picture.url, :class => "img-thumbnail" %> 
     <% end %>

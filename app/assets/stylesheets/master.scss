@@ -21,6 +21,7 @@
   height: max-content;
 }
 
+
 .form-control:focus {
   border-color: #D3D3D3;
 }
@@ -134,3 +135,21 @@ blockquote p {
   box-shadow: 0px 3px 8px #2a2a2a;
 }
 
+.img-responsive {
+  max-height: 250px;
+  max-width: 350px;
+
+ } 
+
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+
+  .scrolls { 
+    overflow-x: scroll;
+    overflow-y: scroll;
+    height: 250px;
+  }
